@@ -18,9 +18,9 @@ public class Controlador {
 
 	public Controlador(Modelo modelo, Vista vista) {
 		if (modelo == null) {
-			 throw new NullPointerException("ERROR: El modelo no puede ser nulo.");
+			throw new NullPointerException("ERROR: El modelo no puede ser nulo.");
 		}
-		
+
 		if (vista == null) {
 			throw new NullPointerException("ERROR: La vista no puede ser nula.");
 		}
@@ -34,11 +34,11 @@ public class Controlador {
 		vista.comenzar();
 	}
 
-	public void terminar() {	
+	public void terminar() {
 		System.out.println("");
 		modelo.terminar();
 		vista.terminar();
-		System.out.printf("%nHasta la proxima!!!!");
+		System.out.printf("%nHasta la próxima!!!!");
 	}
 
 	public void insertar(Cliente cliente) throws OperationNotSupportedException {

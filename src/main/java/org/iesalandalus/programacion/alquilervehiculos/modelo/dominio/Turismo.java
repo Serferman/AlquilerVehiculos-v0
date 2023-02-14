@@ -6,20 +6,20 @@ public class Turismo {
 
 	private static final String ER_MARCA = "[A-Z]+[a-z]*([ -]?[A-Z][a-z]+)*";
 	private static final String ER_MATRICULA = "[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}";
-	
+
 	private String marca;
 	private String modelo;
 	private int cilindrada;
 	private String matricula;
-	
+
 	public Turismo(String marca, String modelo, int cilindrada, String matricula) {
 		setMarca(marca);
 		setModelo(modelo);
 		setCilindrada(cilindrada);
 		setMatricula(matricula);
-		
+
 	}
-	
+
 	public Turismo(Turismo turismo) {
 		if (turismo == null) {
 			throw new NullPointerException("ERROR: No es posible copiar un turismo nulo.");
@@ -38,13 +38,13 @@ public class Turismo {
 		if (marca == null) {
 			throw new NullPointerException("ERROR: La marca no puede ser nula.");
 		}
-		
+
 		if (!marca.matches(ER_MARCA)) {
 			throw new IllegalArgumentException("ERROR: La marca no tiene un formato válido.");
 		}
 		this.marca = marca;
 	}
-	
+
 	public String getModelo() {
 		return modelo;
 	}
@@ -53,14 +53,14 @@ public class Turismo {
 		if (modelo == null) {
 			throw new NullPointerException("ERROR: El modelo no puede ser nulo.");
 		}
-		
+
 		if (modelo.isBlank()) {
 			throw new IllegalArgumentException("ERROR: El modelo no puede estar en blanco.");
 		}
-		
+
 		this.modelo = modelo;
 	}
-	
+
 	public int getCilindrada() {
 		return cilindrada;
 	}
@@ -71,7 +71,7 @@ public class Turismo {
 		}
 		this.cilindrada = cilindrada;
 	}
-	
+
 	public String getMatricula() {
 		return matricula;
 	}
@@ -80,13 +80,13 @@ public class Turismo {
 		if (matricula == null) {
 			throw new NullPointerException("ERROR: La matrícula no puede ser nula.");
 		}
-		
+
 		if (!matricula.matches(ER_MATRICULA)) {
 			throw new IllegalArgumentException("ERROR: La matrícula no tiene un formato válido.");
 		}
 		this.matricula = matricula;
 	}
-	
+
 	public static Turismo getTurismoConMatricula(String matricula) {
 		return new Turismo("Seat", "Leon", 110, matricula);
 	}
@@ -112,5 +112,5 @@ public class Turismo {
 	public String toString() {
 		return String.format("%s %s (%sCV) - %s", marca, modelo, cilindrada, matricula);
 	}
-	
+
 }

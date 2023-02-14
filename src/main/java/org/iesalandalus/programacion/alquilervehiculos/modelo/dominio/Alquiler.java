@@ -31,7 +31,7 @@ public class Alquiler {
 		setCliente(new Cliente(alquiler.getCliente()));
 		setTurismo(new Turismo(alquiler.getTurismo()));
 		fechaAlquiler = alquiler.getFechaAlquiler();
-		fechaDevolucion = alquiler.getFechaDevolucion(); 
+		fechaDevolucion = alquiler.getFechaDevolucion();
 	}
 
 	public Cliente getCliente() {
@@ -88,7 +88,8 @@ public class Alquiler {
 		}
 
 		if (fechaDevolucion.isEqual(getFechaAlquiler()) || fechaDevolucion.isBefore(getFechaAlquiler())) {
-			throw new IllegalArgumentException("ERROR: La fecha de devolución debe ser posterior a la fecha de alquiler.");
+			throw new IllegalArgumentException(
+					"ERROR: La fecha de devolución debe ser posterior a la fecha de alquiler.");
 		}
 
 		if (fechaDevolucion.isAfter(hoy)) {
@@ -131,7 +132,7 @@ public class Alquiler {
 	@Override
 	public String toString() {
 		String cadena;
-		
+
 		if (getFechaDevolucion() == null) {
 			cadena = String.format("%s <---> %s, %s - %s (%d€)", cliente, turismo,
 					getFechaAlquiler().format(FORMATO_FECHA), "Aún no devuelto", getPrecio());

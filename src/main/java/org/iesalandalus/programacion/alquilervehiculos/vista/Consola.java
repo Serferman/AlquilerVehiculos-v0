@@ -1,6 +1,5 @@
 package org.iesalandalus.programacion.alquilervehiculos.vista;
 
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -58,17 +57,17 @@ public class Consola {
 	public static Opcion elegirOpcion() {
 		int indiceOpcion = 0;
 		do {
-			indiceOpcion = leerEntero("Introduce una opcion: ");
+			indiceOpcion = leerEntero("Introduce una opción: ");
 		} while ((indiceOpcion < 0) && (indiceOpcion > 17));
 		return Opcion.values()[indiceOpcion];
 	}
 
 	public static Cliente leerCliente() {
-		return new Cliente(leerNombre(), leerCadena("Introduceme un DNI valido: "), leerTelefono());
+		return new Cliente(leerNombre(), leerCadena("Introduceme un DNI válido: "), leerTelefono());
 	}
 
 	public static Cliente leerClienteDni() {
-		return Cliente.getClienteConDni(leerCadena("Introduceme un DNI valido: "));
+		return Cliente.getClienteConDni(leerCadena("Introduceme un DNI válido: "));
 	}
 
 	public static String leerNombre() {
@@ -76,17 +75,17 @@ public class Consola {
 	}
 
 	public static String leerTelefono() {
-		return leerCadena("Introduce un telefono del cliente: ");
+		return leerCadena("Introduce un teléfono del cliente: ");
 	}
 
 	public static Turismo leerTurismo() {
 		return new Turismo(leerCadena("Introduce la marca del turismo: "),
 				leerCadena("Introduce el modelo del turismo: "), leerEntero("Introduce las cilindradas del turismo: "),
-				leerCadena("Introduce la matricula: "));
+				leerCadena("Introduce la matrícula: "));
 	}
 
 	public static Turismo leerTurismoMatricula() {
-		return Turismo.getTurismoConMatricula(leerCadena("Introduceme una matrícula valida: "));
+		return Turismo.getTurismoConMatricula(leerCadena("Introduceme una matrícula válida: "));
 	}
 
 	public static Alquiler leerAlquiler() {

@@ -43,11 +43,11 @@ public class Turismos {
 		return (indice != -1) ? coleccionTurismos.get(indice) : null;
 	}
 
-	public void borrar(Turismo turismo) throws OperationNotSupportedException {		
+	public void borrar(Turismo turismo) throws OperationNotSupportedException {
 		if (turismo == null) {
-			 throw new NullPointerException("ERROR: No se puede borrar un turismo nulo.");
+			throw new NullPointerException("ERROR: No se puede borrar un turismo nulo.");
 		}
-		
+
 		if (!coleccionTurismos.contains(turismo)) {
 			throw new OperationNotSupportedException("ERROR: No existe ningún turismo con esa matrícula.");
 		}

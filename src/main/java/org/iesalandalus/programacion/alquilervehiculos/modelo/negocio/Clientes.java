@@ -27,8 +27,8 @@ public class Clientes {
 		if (cliente == null) {
 			throw new NullPointerException("ERROR: No se puede insertar un cliente nulo.");
 		}
-		
-		if  (coleccionClientes.contains(cliente)) {
+
+		if (coleccionClientes.contains(cliente)) {
 			throw new OperationNotSupportedException("ERROR: Ya existe un cliente con ese DNI.");
 		}
 
@@ -39,7 +39,7 @@ public class Clientes {
 		if (cliente == null) {
 			throw new NullPointerException("ERROR: No se puede buscar un cliente nulo.");
 		}
-		
+
 		int indice = coleccionClientes.indexOf(cliente);
 		return (indice != -1) ? coleccionClientes.get(indice) : null;
 	}
@@ -60,19 +60,19 @@ public class Clientes {
 		if (cliente == null) {
 			throw new NullPointerException("ERROR: No se puede modificar un cliente nulo.");
 		}
-		
-		if (!coleccionClientes.contains(cliente)) { //Si no contiene cliente la coleccion es verdadero
+
+		if (!coleccionClientes.contains(cliente)) { // Si no contiene cliente la coleccion es verdadero
 			throw new OperationNotSupportedException("ERROR: No existe ningún cliente con ese DNI.");
 		}
-		
+
 		if ((nombre != null) && (!nombre.isBlank())) {
 			buscar(cliente).setNombre(nombre);
-		} 
-		
-		if ((telefono != null) && (!telefono.isBlank())) {
-			buscar(cliente).setTelefono(telefono);	
 		}
-	
+
+		if ((telefono != null) && (!telefono.isBlank())) {
+			buscar(cliente).setTelefono(telefono);
+		}
+
 	}
 
 }

@@ -28,7 +28,7 @@ public class Modelo {
 	}
 
 	public void terminar() {
-		System.out.println("El modelo ha terminado");
+		System.out.println("AVISO: El modelo ha terminado");
 	}
 
 	public void insertar(Cliente cliente) throws OperationNotSupportedException {
@@ -78,7 +78,7 @@ public class Modelo {
 
 	public void devolver(Alquiler alquiler, LocalDate fechaDevolucion) throws OperationNotSupportedException {
 		alquiler = alquileres.buscar(alquiler);
-		
+
 		if (alquiler == null) {
 			throw new OperationNotSupportedException("ERROR: No existe el alquiler a devolver.");
 		}
