@@ -83,10 +83,10 @@ public class Alquileres {
 			throw new NullPointerException("ERROR: No se puede devolver un alquiler nulo.");
 		}
 		
-		if ( buscar(alquiler) == null) {
+		if(buscar(alquiler) == null) {
 			throw new OperationNotSupportedException("ERROR: No existe ningún alquiler igual.");
 		} 
-		buscar(alquiler).devolver(fechaDevolucion);
+		alquiler.devolver(fechaDevolucion);
 	}
 
 	public void borrar(Alquiler alquiler) throws OperationNotSupportedException {

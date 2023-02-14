@@ -30,8 +30,8 @@ public class Alquiler {
 
 		setCliente(new Cliente(alquiler.getCliente()));
 		setTurismo(new Turismo(alquiler.getTurismo()));
-		setFechaAlquiler(alquiler.getFechaAlquiler());
-		setFechaDevolucion(alquiler.getFechaDevolucion()); 
+		fechaAlquiler = alquiler.getFechaAlquiler();
+		fechaDevolucion = alquiler.getFechaDevolucion(); 
 	}
 
 	public Cliente getCliente() {
@@ -94,7 +94,6 @@ public class Alquiler {
 		if (fechaDevolucion.isAfter(hoy)) {
 			throw new IllegalArgumentException("ERROR: La fecha de devolución no puede ser futura.");
 		}
-
 		this.fechaDevolucion = fechaDevolucion;
 	}
 
@@ -102,7 +101,6 @@ public class Alquiler {
 		if (getFechaDevolucion() != null) {
 			throw new OperationNotSupportedException("ERROR: La devolución ya estaba registrada.");
 		}
-
 		setFechaDevolucion(fechaDevolucion);
 	}
 
