@@ -64,7 +64,7 @@ public class Consola {
 			} catch (IllegalArgumentException e) {
 				System.out.printf("%s",e.getMessage());
 			}
-		} while ((indiceOpcion < 0) && (indiceOpcion > 17));
+		} while (opcion == null);
 		return opcion;
 	}
 
