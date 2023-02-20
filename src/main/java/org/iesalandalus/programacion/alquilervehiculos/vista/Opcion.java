@@ -17,11 +17,11 @@ public enum Opcion {
 		this.texto = texto;
 	}
 
-	private boolean esOrdinalValido(int ordinal) {
+	private static boolean esOrdinalValido(int ordinal) {
 		return ((ordinal >= 0) && (ordinal <= Opcion.values().length));
 	}
 
-	public Opcion get(int ordinal) {
+	public static Opcion get(int ordinal) {
 		if (!esOrdinalValido(ordinal)) {
 			throw new IllegalArgumentException("ERROR: La opcion seleccionada no es válida.");
 		}

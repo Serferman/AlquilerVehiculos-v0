@@ -56,10 +56,16 @@ public class Consola {
 
 	public static Opcion elegirOpcion() {
 		int indiceOpcion = 0;
+		Opcion opcion = null;
 		do {
-			indiceOpcion = leerEntero("Introduce una opción: ");
+			try {
+				indiceOpcion = leerEntero("Introduce una opción: ");
+				opcion = Opcion.get(indiceOpcion);
+			} catch (IllegalArgumentException e) {
+				System.out.printf("%s",e.getMessage());
+			}
 		} while ((indiceOpcion < 0) && (indiceOpcion > 17));
-		return Opcion.values()[indiceOpcion];
+		return opcion;
 	}
 
 	public static Cliente leerCliente() {

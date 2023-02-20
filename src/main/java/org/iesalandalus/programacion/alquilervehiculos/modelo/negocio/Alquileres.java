@@ -12,7 +12,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 
 public class Alquileres {
 
-	List<Alquiler> coleccionAlquileres;
+	private List<Alquiler> coleccionAlquileres;
 
 	public Alquileres() {
 		coleccionAlquileres = new ArrayList<>();
